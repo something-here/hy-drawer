@@ -1764,7 +1764,7 @@ module.exports = Object.keys || function keys(O) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Set = exports.string = exports.regex = exports.number = exports.boolean = exports.arrayOf = exports.array = undefined;
+exports.Set = exports.string = exports.regex = exports.number = exports.bool = exports.arrayOf = exports.array = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // # src / common.js
 // Copyright (c) 2017 Florian Klampfer <https://qwtel.com/>
@@ -1776,7 +1776,7 @@ var _types = __webpack_require__(60);
 
 exports.array = _types.array;
 exports.arrayOf = _types.arrayOf;
-exports.boolean = _types.boolean;
+exports.bool = _types.bool;
 exports.number = _types.number;
 exports.regex = _types.regex;
 exports.string = _types.string;
@@ -1816,10 +1816,10 @@ var Set = exports.Set = global.Set || function () {
 
 function simpleType(type, defVal, attr) {
   // Use the provided type, if any.
-  if (type && type === _types.boolean) return type(attr);else if (type) return !attr ? defVal : type(attr);
+  if (type && type === _types.bool) return type(attr);else if (type) return !attr ? defVal : type(attr);
 
   // Otherwise, infer primitive types form `defVal`.
-  else if (typeof defVal === 'boolean') return (0, _types.boolean)(attr);else if (typeof defVal === 'number') return !attr ? defVal : (0, _types.number)(attr);else if ((typeof defVal === 'undefined' ? 'undefined' : _typeof(defVal)) === 'object' && defVal) return !attr ? defVal : (0, _types.array)(attr);else if (typeof defVal === 'string') return !attr ? defVal : (0, _types.string)(attr);
+  else if (typeof defVal === 'boolean') return (0, _types.bool)(attr);else if (typeof defVal === 'number') return !attr ? defVal : (0, _types.number)(attr);else if ((typeof defVal === 'undefined' ? 'undefined' : _typeof(defVal)) === 'object' && defVal) return !attr ? defVal : (0, _types.array)(attr);else if (typeof defVal === 'string') return !attr ? defVal : (0, _types.string)(attr);
 
   if (true) console.warn('No type provided for attribute ' + attr + ' and can\'t infer from defaults');
   return undefined;
@@ -2289,15 +2289,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.array = array;
 exports.arrayOf = arrayOf;
 exports.string = string;
-exports.boolean = boolean;
+exports.bool = bool;
 exports.number = number;
 exports.regex = regex;
+exports.oneOf = oneOf;
 // # src / types.js
 // Copyright (c) 2017 Florian Klampfer <https://qwtel.com/>
 // Licensed under MIT
 
 function array(attr) {
-  return attr.replace(/^\[/, '').replace(/\]$/, '').split(',');
+  return attr.trim().replace(/^\[?(.*?)\]?$/, '$1').split(',').map(function (x) {
+    return x.trim();
+  });
 }
 
 function arrayOf(type) {
@@ -2310,7 +2313,7 @@ function string(attr) {
   return attr;
 }
 
-function boolean(attr) {
+function bool(attr) {
   if (attr === true || attr === 'true') return true;else if (attr === false || attr === 'false') return false;
   return attr != null;
 }
@@ -2320,18 +2323,17 @@ function number(attr) {
 }
 
 function regex(attr) {
-  return RegExp(attr);
+  var match = attr.match(/^\/?(.*?)(\/([gimy]*))?$/);
+  return new RegExp(match[1], match[3]);
 }
 
-/*
-export function oneOf(alts) {
-  return (attr) => {
-    const i = alts.indexOf(attr);
-    if (process.env.DEBUG && i === -1) console.warn(`'${attr}' is not oneOf '${alts.join(',')}'`);
+function oneOf(alts) {
+  return function (attr) {
+    var i = alts.indexOf(attr);
+    if (true && i === -1) console.warn('\'' + attr + '\' is not \'oneOf\': ' + alts.join(', '));
     return i > -1 ? alts[i] : null;
   };
 }
-*/
 
 /***/ }),
 /* 61 */
@@ -4588,14 +4590,14 @@ function drawerMixin(C) {
       key: 'types',
       get: function get() {
         return {
-          opened: _types.boolean,
-          align: _types.string,
-          persistent: _types.boolean,
+          opened: _types.bool,
+          align: (0, _types.oneOf)(['left', 'right']),
+          persistent: _types.bool,
           range: (0, _types.arrayOf)(_types.number),
           threshold: _types.number,
-          preventDefault: _types.boolean,
-          mouseEvents: _types.boolean,
-          _backButton: _types.boolean,
+          preventDefault: _types.bool,
+          mouseEvents: _types.bool,
+          _backButton: _types.bool,
           _hideOverflow: _types.string
         };
       }
