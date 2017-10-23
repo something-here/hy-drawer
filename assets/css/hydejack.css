@@ -10,7 +10,7 @@
  *                 /\___/                \ \____/
  *                 \/__/                  \/___/
  *
- * Powered by Hydejack v7.0.0-beta.4 <https://qwtel.com/hydejack/>
+ * Powered by Hydejack v7.0.0-beta.7 <https://qwtel.com/hydejack/>
  */
 *,
 *::before,
@@ -679,10 +679,6 @@ a, .a {
  */
 .sidebar a:hover {
   border-bottom-color: #fff; }
-@media print {
-  .sidebar {
-    page-break-inside: avoid;
-    break-inside: avoid-page; } }
 
 @media screen {
   hy-drawer {
@@ -706,7 +702,7 @@ a, .a {
 @media screen and (min-width: 98.5em) {
   hy-drawer {
     --hy-drawer-width: calc(50% - 28rem);
-    --hy-drawer-slide-width: calc(-50% + 28.5rem); }
+    --hy-drawer-slide-width: calc(50% - 28.5rem); }
     hy-drawer > .hy-drawer-content.hy-drawer-left {
       width: calc(50% - 28rem);
       left: calc(-50% + 28.5rem); } }
@@ -746,7 +742,8 @@ a.sidebar-nav-item::before, a.sidebar-nav-item::after {
 
 @media print {
   .sidebar {
-    page-break-inside: avoid; }
+    page-break-before: always;
+    break-before: always; }
 
   .sidebar-nav, .sidebar-social {
     display: none; } }
@@ -892,7 +889,7 @@ main > footer {
  * to continuosly rebuild this file.
  */
 @media screen {
-  a[href*="//"]:not(.no-mark-external)::after, a.no-push-state:not(.no-mark-external)::after {
+  a[href*="//"]:not(.no-mark-external)::after, a.external:not(.no-mark-external)::after, a.no-push-state:not(.no-mark-external)::after {
     content: "\00A0\ea7e";
     font-family: "icomoon" !important;
     speak: none;
@@ -906,7 +903,7 @@ main > footer {
     -moz-osx-font-smoothing: grayscale;
     opacity: 0.33;
     transition: opacity 500ms; }
-  a[href*="//"]:not(.no-mark-external):hover::after, a[href*="//"]:not(.no-mark-external):focus::after, a.no-push-state:not(.no-mark-external):hover::after, a.no-push-state:not(.no-mark-external):focus::after {
+  a[href*="//"]:not(.no-mark-external):hover::after, a[href*="//"]:not(.no-mark-external):focus::after, a.external:not(.no-mark-external):hover::after, a.external:not(.no-mark-external):focus::after, a.no-push-state:not(.no-mark-external):hover::after, a.no-push-state:not(.no-mark-external):focus::after {
     opacity: 1;
     transition: opacity 100ms; } }
 /*
