@@ -7,7 +7,7 @@
 		exports["hyDrawer"] = factory(require("jQuery"));
 	else
 		root["hyDrawer"] = factory(root["jQuery"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_53__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_52__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -81,7 +81,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 var root_1 = __webpack_require__(4);
 var toSubscriber_1 = __webpack_require__(100);
-var observable_1 = __webpack_require__(42);
+var observable_1 = __webpack_require__(41);
 var pipe_1 = __webpack_require__(102);
 /**
  * A representation of any set of values over any amount of time. This is the most basic building block
@@ -395,10 +395,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(39);
+var isFunction_1 = __webpack_require__(38);
 var Subscription_1 = __webpack_require__(9);
-var Observer_1 = __webpack_require__(59);
-var rxSubscriber_1 = __webpack_require__(41);
+var Observer_1 = __webpack_require__(58);
+var rxSubscriber_1 = __webpack_require__(40);
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -666,8 +666,8 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(50)('wks');
-var uid = __webpack_require__(30);
+var store = __webpack_require__(49)('wks');
+var uid = __webpack_require__(29);
 var Symbol = __webpack_require__(8).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
@@ -748,13 +748,13 @@ exports.OuterSubscriber = OuterSubscriber;
 "use strict";
 
 var root_1 = __webpack_require__(4);
-var isArrayLike_1 = __webpack_require__(62);
-var isPromise_1 = __webpack_require__(63);
-var isObject_1 = __webpack_require__(58);
+var isArrayLike_1 = __webpack_require__(61);
+var isPromise_1 = __webpack_require__(62);
+var isObject_1 = __webpack_require__(57);
 var Observable_1 = __webpack_require__(0);
-var iterator_1 = __webpack_require__(44);
+var iterator_1 = __webpack_require__(43);
 var InnerSubscriber_1 = __webpack_require__(119);
-var observable_1 = __webpack_require__(42);
+var observable_1 = __webpack_require__(41);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -833,8 +833,8 @@ exports.subscribeToResult = subscribeToResult;
 var global = __webpack_require__(8);
 var core = __webpack_require__(2);
 var hide = __webpack_require__(20);
-var redefine = __webpack_require__(47);
-var ctx = __webpack_require__(31);
+var redefine = __webpack_require__(46);
+var ctx = __webpack_require__(30);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -894,9 +894,9 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 "use strict";
 
 var isArray_1 = __webpack_require__(22);
-var isObject_1 = __webpack_require__(58);
-var isFunction_1 = __webpack_require__(39);
-var tryCatch_1 = __webpack_require__(40);
+var isObject_1 = __webpack_require__(57);
+var isFunction_1 = __webpack_require__(38);
+var tryCatch_1 = __webpack_require__(39);
 var errorObject_1 = __webpack_require__(23);
 var UnsubscriptionError_1 = __webpack_require__(101);
 /**
@@ -1098,7 +1098,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var ScalarObservable_1 = __webpack_require__(43);
+var ScalarObservable_1 = __webpack_require__(42);
 var EmptyObservable_1 = __webpack_require__(25);
 var isScheduler_1 = __webpack_require__(19);
 /**
@@ -1283,7 +1283,7 @@ module.exports = function (it, key) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(28);
+var defined = __webpack_require__(27);
 module.exports = function (it) {
   return Object(defined(it));
 };
@@ -1360,7 +1360,7 @@ exports.isScheduler = isScheduler;
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(11);
-var createDesc = __webpack_require__(29);
+var createDesc = __webpack_require__(28);
 module.exports = __webpack_require__(13) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -1415,7 +1415,7 @@ var Subscriber_1 = __webpack_require__(1);
 var Subscription_1 = __webpack_require__(9);
 var ObjectUnsubscribedError_1 = __webpack_require__(115);
 var SubjectSubscription_1 = __webpack_require__(116);
-var rxSubscriber_1 = __webpack_require__(41);
+var rxSubscriber_1 = __webpack_require__(40);
 /**
  * @class SubjectSubscriber<T>
  */
@@ -1662,59 +1662,6 @@ exports.EmptyObservable = EmptyObservable;
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var AsyncAction_1 = __webpack_require__(133);
-var AsyncScheduler_1 = __webpack_require__(135);
-/**
- *
- * Async Scheduler
- *
- * <span class="informal">Schedule task as if you used setTimeout(task, duration)</span>
- *
- * `async` scheduler schedules tasks asynchronously, by putting them on the JavaScript
- * event loop queue. It is best used to delay tasks in time or to schedule tasks repeating
- * in intervals.
- *
- * If you just want to "defer" task, that is to perform it right after currently
- * executing synchronous code ends (commonly achieved by `setTimeout(deferredTask, 0)`),
- * better choice will be the {@link asap} scheduler.
- *
- * @example <caption>Use async scheduler to delay task</caption>
- * const task = () => console.log('it works!');
- *
- * Rx.Scheduler.async.schedule(task, 2000);
- *
- * // After 2 seconds logs:
- * // "it works!"
- *
- *
- * @example <caption>Use async scheduler to repeat task in intervals</caption>
- * function task(state) {
- *   console.log(state);
- *   this.schedule(state + 1, 1000); // `this` references currently executing Action,
- *                                   // which we reschedule with new state and delay
- * }
- *
- * Rx.Scheduler.async.schedule(task, 3000, 0);
- *
- * // Logs:
- * // 0 after 3s
- * // 1 after 4s
- * // 2 after 5s
- * // 3 after 6s
- *
- * @static true
- * @name async
- * @owner Scheduler
- */
-exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
-//# sourceMappingURL=async.js.map
-
-/***/ }),
-/* 27 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -1726,7 +1673,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -1737,7 +1684,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -1751,7 +1698,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -1762,11 +1709,11 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(48);
+var aFunction = __webpack_require__(47);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -1788,19 +1735,19 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys = __webpack_require__(78);
-var enumBugKeys = __webpack_require__(51);
+var enumBugKeys = __webpack_require__(50);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -1808,11 +1755,11 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(35);
+var cof = __webpack_require__(34);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -1820,7 +1767,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -1831,11 +1778,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(27);
+var toInteger = __webpack_require__(26);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -1843,18 +1790,18 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(50)('keys');
-var uid = __webpack_require__(30);
+var shared = __webpack_require__(49)('keys');
+var uid = __webpack_require__(29);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1871,7 +1818,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.simpleType = simpleType;
 
-var _types = __webpack_require__(56);
+var _types = __webpack_require__(55);
 
 exports.array = _types.array;
 exports.arrayOf = _types.arrayOf;
@@ -1883,7 +1830,7 @@ exports.string = _types.string;
 // Quick-and-Dirty `Set` implementation.
 /* eslint-disable */
 
-var Set = exports.Set = global.Set || function () {
+var Set = exports.Set = global.Set && new global.Set([1]).size === 1 ? global.Set : function () {
   var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 
   a = a.filter(function (x, i) {
@@ -1926,7 +1873,7 @@ function simpleType(type, defVal, attr) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1938,7 +1885,7 @@ exports.isFunction = isFunction;
 //# sourceMappingURL=isFunction.js.map
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1963,7 +1910,7 @@ exports.tryCatch = tryCatch;
 //# sourceMappingURL=tryCatch.js.map
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1979,7 +1926,7 @@ exports.$$rxSubscriber = exports.rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2011,7 +1958,7 @@ exports.$$observable = exports.observable;
 //# sourceMappingURL=observable.js.map
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2075,7 +2022,7 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2119,7 +2066,7 @@ exports.$$iterator = exports.iterator;
 //# sourceMappingURL=iterator.js.map
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(69);
@@ -2128,7 +2075,7 @@ module.exports = __webpack_require__(2).Array.from;
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(12);
@@ -2141,13 +2088,13 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(8);
 var hide = __webpack_require__(20);
 var has = __webpack_require__(15);
-var SRC = __webpack_require__(30)('src');
+var SRC = __webpack_require__(29)('src');
 var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
@@ -2178,7 +2125,7 @@ __webpack_require__(2).inspectSource = function (it) {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -2188,19 +2135,19 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(34);
-var defined = __webpack_require__(28);
+var IObject = __webpack_require__(33);
+var defined = __webpack_require__(27);
 module.exports = function (it) {
   return IObject(defined(it));
 };
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(8);
@@ -2212,7 +2159,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -2222,7 +2169,7 @@ module.exports = (
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(11).f;
@@ -2235,13 +2182,13 @@ module.exports = function (it, tag, stat) {
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_53__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_52__;
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(91);
@@ -2249,7 +2196,7 @@ module.exports = __webpack_require__(2).Array.forEach;
 
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(97);
@@ -2257,7 +2204,7 @@ module.exports = __webpack_require__(2).Object.keys;
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2316,7 +2263,7 @@ function oneOf(alts) {
 }
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2327,11 +2274,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Set = undefined;
 exports.createTween = createTween;
-exports.linearTween = linearTween;
+exports.easeOutSine = easeOutSine;
 
 var _Observable = __webpack_require__(0);
 
-var _common = __webpack_require__(38);
+var _common = __webpack_require__(37);
 
 // # src / common.js
 // Copyright (c) 2017 Florian Klampfer <https://qwtel.com/>
@@ -2388,13 +2335,12 @@ function createTween(easingFunction, b, c, d, s) {
   });
 }
 
-// The linear easing function...
-function linearTween(t, b, c, d) {
-  return c * t / d + b;
+function easeOutSine(t, b, c, d) {
+  return c * Math.sin(t / d * (Math.PI / 2)) + b; // eslint-disable-line
 }
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2406,7 +2352,7 @@ exports.isObject = isObject;
 //# sourceMappingURL=isObject.js.map
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2420,7 +2366,7 @@ exports.empty = {
 //# sourceMappingURL=Observer.js.map
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2431,7 +2377,7 @@ exports.noop = noop;
 //# sourceMappingURL=noop.js.map
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(108);
@@ -2439,7 +2385,7 @@ module.exports = __webpack_require__(2).Object.assign;
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2448,7 +2394,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2460,14 +2406,14 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(0);
 var ArrayObservable_1 = __webpack_require__(10);
-var mergeAll_1 = __webpack_require__(65);
+var mergeAll_1 = __webpack_require__(64);
 var isScheduler_1 = __webpack_require__(19);
 /* tslint:enable:max-line-length */
 function merge() {
@@ -2565,7 +2511,7 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2624,7 +2570,7 @@ exports.mergeAll = mergeAll;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2719,7 +2665,7 @@ var MapSubscriber = (function (_super) {
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2810,6 +2756,59 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=refCount.js.map
 
 /***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var AsyncAction_1 = __webpack_require__(169);
+var AsyncScheduler_1 = __webpack_require__(171);
+/**
+ *
+ * Async Scheduler
+ *
+ * <span class="informal">Schedule task as if you used setTimeout(task, duration)</span>
+ *
+ * `async` scheduler schedules tasks asynchronously, by putting them on the JavaScript
+ * event loop queue. It is best used to delay tasks in time or to schedule tasks repeating
+ * in intervals.
+ *
+ * If you just want to "defer" task, that is to perform it right after currently
+ * executing synchronous code ends (commonly achieved by `setTimeout(deferredTask, 0)`),
+ * better choice will be the {@link asap} scheduler.
+ *
+ * @example <caption>Use async scheduler to delay task</caption>
+ * const task = () => console.log('it works!');
+ *
+ * Rx.Scheduler.async.schedule(task, 2000);
+ *
+ * // After 2 seconds logs:
+ * // "it works!"
+ *
+ *
+ * @example <caption>Use async scheduler to repeat task in intervals</caption>
+ * function task(state) {
+ *   console.log(state);
+ *   this.schedule(state + 1, 1000); // `this` references currently executing Action,
+ *                                   // which we reschedule with new state and delay
+ * }
+ *
+ * Rx.Scheduler.async.schedule(task, 3000, 0);
+ *
+ * // Logs:
+ * // 0 after 3s
+ * // 1 after 4s
+ * // 2 after 5s
+ * // 3 after 6s
+ *
+ * @static true
+ * @name async
+ * @owner Scheduler
+ */
+exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
+//# sourceMappingURL=async.js.map
+
+/***/ }),
 /* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2823,9 +2822,9 @@ exports.JQUERY_FEATURE_TESTS = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(45);
+__webpack_require__(44);
 
-var _jquery = __webpack_require__(53);
+var _jquery = __webpack_require__(52);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -2833,11 +2832,11 @@ var _defineJqueryComponent = __webpack_require__(90);
 
 var _symbols = __webpack_require__(18);
 
-var _common = __webpack_require__(57);
+var _common = __webpack_require__(56);
 
 var _mixin = __webpack_require__(103);
 
-__webpack_require__(178);
+__webpack_require__(176);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2919,8 +2918,8 @@ __webpack_require__(71)(String, 'String', function (iterated) {
 /* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(27);
-var defined = __webpack_require__(28);
+var toInteger = __webpack_require__(26);
+var defined = __webpack_require__(27);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
@@ -2946,12 +2945,12 @@ module.exports = function (TO_STRING) {
 
 var LIBRARY = __webpack_require__(72);
 var $export = __webpack_require__(7);
-var redefine = __webpack_require__(47);
+var redefine = __webpack_require__(46);
 var hide = __webpack_require__(20);
 var has = __webpack_require__(15);
-var Iterators = __webpack_require__(32);
+var Iterators = __webpack_require__(31);
 var $iterCreate = __webpack_require__(75);
-var setToStringTag = __webpack_require__(52);
+var setToStringTag = __webpack_require__(51);
 var getPrototypeOf = __webpack_require__(82);
 var ITERATOR = __webpack_require__(3)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
@@ -3027,7 +3026,7 @@ module.exports = false;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(13) && !__webpack_require__(14)(function () {
-  return Object.defineProperty(__webpack_require__(46)('div'), 'a', { get: function () { return 7; } }).a != 7;
+  return Object.defineProperty(__webpack_require__(45)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
@@ -3056,8 +3055,8 @@ module.exports = function (it, S) {
 "use strict";
 
 var create = __webpack_require__(76);
-var descriptor = __webpack_require__(29);
-var setToStringTag = __webpack_require__(52);
+var descriptor = __webpack_require__(28);
+var setToStringTag = __webpack_require__(51);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -3076,15 +3075,15 @@ module.exports = function (Constructor, NAME, next) {
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(21);
 var dPs = __webpack_require__(77);
-var enumBugKeys = __webpack_require__(51);
-var IE_PROTO = __webpack_require__(37)('IE_PROTO');
+var enumBugKeys = __webpack_require__(50);
+var IE_PROTO = __webpack_require__(36)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(46)('iframe');
+  var iframe = __webpack_require__(45)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
@@ -3122,7 +3121,7 @@ module.exports = Object.create || function create(O, Properties) {
 
 var dP = __webpack_require__(11);
 var anObject = __webpack_require__(21);
-var getKeys = __webpack_require__(33);
+var getKeys = __webpack_require__(32);
 
 module.exports = __webpack_require__(13) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
@@ -3140,9 +3139,9 @@ module.exports = __webpack_require__(13) ? Object.defineProperties : function de
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(15);
-var toIObject = __webpack_require__(49);
+var toIObject = __webpack_require__(48);
 var arrayIndexOf = __webpack_require__(79)(false);
-var IE_PROTO = __webpack_require__(37)('IE_PROTO');
+var IE_PROTO = __webpack_require__(36)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -3164,8 +3163,8 @@ module.exports = function (object, names) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(49);
-var toLength = __webpack_require__(36);
+var toIObject = __webpack_require__(48);
+var toLength = __webpack_require__(35);
 var toAbsoluteIndex = __webpack_require__(80);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
@@ -3191,7 +3190,7 @@ module.exports = function (IS_INCLUDES) {
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(27);
+var toInteger = __webpack_require__(26);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -3215,7 +3214,7 @@ module.exports = document && document.documentElement;
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = __webpack_require__(15);
 var toObject = __webpack_require__(16);
-var IE_PROTO = __webpack_require__(37)('IE_PROTO');
+var IE_PROTO = __webpack_require__(36)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function (O) {
@@ -3233,12 +3232,12 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 "use strict";
 
-var ctx = __webpack_require__(31);
+var ctx = __webpack_require__(30);
 var $export = __webpack_require__(7);
 var toObject = __webpack_require__(16);
 var call = __webpack_require__(84);
 var isArrayIter = __webpack_require__(85);
-var toLength = __webpack_require__(36);
+var toLength = __webpack_require__(35);
 var createProperty = __webpack_require__(86);
 var getIterFn = __webpack_require__(87);
 
@@ -3294,7 +3293,7 @@ module.exports = function (iterator, fn, value, entries) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
-var Iterators = __webpack_require__(32);
+var Iterators = __webpack_require__(31);
 var ITERATOR = __webpack_require__(3)('iterator');
 var ArrayProto = Array.prototype;
 
@@ -3310,7 +3309,7 @@ module.exports = function (it) {
 "use strict";
 
 var $defineProperty = __webpack_require__(11);
-var createDesc = __webpack_require__(29);
+var createDesc = __webpack_require__(28);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -3324,7 +3323,7 @@ module.exports = function (object, index, value) {
 
 var classof = __webpack_require__(88);
 var ITERATOR = __webpack_require__(3)('iterator');
-var Iterators = __webpack_require__(32);
+var Iterators = __webpack_require__(31);
 module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
@@ -3337,7 +3336,7 @@ module.exports = __webpack_require__(2).getIteratorMethod = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(35);
+var cof = __webpack_require__(34);
 var TAG = __webpack_require__(3)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
@@ -3409,15 +3408,15 @@ var _get = function get(object, property, receiver) { if (object === null) objec
 
 exports.defineJQueryComponent = defineJQueryComponent;
 
+__webpack_require__(53);
+
 __webpack_require__(54);
 
-__webpack_require__(55);
-
-var _jquery = __webpack_require__(53);
+var _jquery = __webpack_require__(52);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _common = __webpack_require__(38);
+var _common = __webpack_require__(37);
 
 var _symbols = __webpack_require__(18);
 
@@ -3549,10 +3548,10 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 // 4 -> Array#every
 // 5 -> Array#find
 // 6 -> Array#findIndex
-var ctx = __webpack_require__(31);
-var IObject = __webpack_require__(34);
+var ctx = __webpack_require__(30);
+var IObject = __webpack_require__(33);
 var toObject = __webpack_require__(16);
-var toLength = __webpack_require__(36);
+var toLength = __webpack_require__(35);
 var asc = __webpack_require__(93);
 module.exports = function (TYPE, $create) {
   var IS_MAP = TYPE == 1;
@@ -3627,7 +3626,7 @@ module.exports = function (original) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(35);
+var cof = __webpack_require__(34);
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
@@ -3655,7 +3654,7 @@ module.exports = function (method, arg) {
 
 // 19.1.2.14 Object.keys(O)
 var toObject = __webpack_require__(16);
-var $keys = __webpack_require__(33);
+var $keys = __webpack_require__(32);
 
 __webpack_require__(98)('keys', function () {
   return function keys(it) {
@@ -3714,8 +3713,8 @@ exports.sSetupDOM = _symbols.sSetupDOM;
 "use strict";
 
 var Subscriber_1 = __webpack_require__(1);
-var rxSubscriber_1 = __webpack_require__(41);
-var Observer_1 = __webpack_require__(59);
+var rxSubscriber_1 = __webpack_require__(40);
+var Observer_1 = __webpack_require__(58);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -3770,7 +3769,7 @@ exports.UnsubscriptionError = UnsubscriptionError;
 
 "use strict";
 
-var noop_1 = __webpack_require__(60);
+var noop_1 = __webpack_require__(59);
 /* tslint:enable:max-line-length */
 function pipe() {
     var fns = [];
@@ -3815,17 +3814,17 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 exports.drawerMixin = drawerMixin;
 
-__webpack_require__(45);
+__webpack_require__(44);
 
 __webpack_require__(104);
 
-__webpack_require__(61);
+__webpack_require__(60);
 
 var _component = __webpack_require__(112);
 
 var _symbols = __webpack_require__(18);
 
-var _types = __webpack_require__(56);
+var _types = __webpack_require__(55);
 
 var _Observable = __webpack_require__(0);
 
@@ -3843,37 +3842,35 @@ var _never = __webpack_require__(128);
 
 var _do = __webpack_require__(130);
 
-var _debounceTime = __webpack_require__(132);
+var _filter = __webpack_require__(132);
 
-var _filter = __webpack_require__(138);
+var _map = __webpack_require__(134);
 
-var _map = __webpack_require__(140);
+var _mapTo = __webpack_require__(135);
 
-var _mapTo = __webpack_require__(141);
+var _pairwise = __webpack_require__(137);
 
-var _pairwise = __webpack_require__(143);
+var _repeatWhen = __webpack_require__(139);
 
-var _repeatWhen = __webpack_require__(145);
+var _sample = __webpack_require__(141);
 
-var _sample = __webpack_require__(147);
+var _share = __webpack_require__(143);
 
-var _share = __webpack_require__(149);
+var _skipWhile = __webpack_require__(147);
 
-var _skipWhile = __webpack_require__(153);
+var _startWith = __webpack_require__(149);
 
-var _startWith = __webpack_require__(155);
+var _switchMap = __webpack_require__(161);
 
-var _switchMap = __webpack_require__(167);
+var _take = __webpack_require__(163);
 
-var _take = __webpack_require__(169);
+var _takeUntil = __webpack_require__(166);
 
-var _takeUntil = __webpack_require__(172);
+var _timestamp = __webpack_require__(168);
 
-var _timestamp = __webpack_require__(174);
+var _withLatestFrom = __webpack_require__(174);
 
-var _withLatestFrom = __webpack_require__(176);
-
-var _common = __webpack_require__(57);
+var _common = __webpack_require__(56);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -3940,9 +3937,16 @@ var MIXIN_FEATURE_TESTS = exports.MIXIN_FEATURE_TESTS = new _common.Set([].conca
 exports.sSetup = _symbols.sSetup;
 exports.sSetupDOM = _symbols.sSetupDOM;
 
-// The duration (in ms) of the animation when releasing the drawer.
+// The base duration of the fling animation.
 
-var TRANSITION_DURATION = 200;
+var BASE_DURATION = 200;
+
+// We adjust the duration of the animation using the width of the drawer.
+// There is no physics to this, but we know from testing that the animation starts to feel bad
+// when the drawer increases in size.
+// From testing we know that, if we increase the duration as a fraction of the drawer width,
+// the animation stays smooth across common display sizes.
+var WIDTH_CONTRIBUTION = 0.15;
 
 // Minimum velocity of the drawer (in px/ms) when releasing to make it fling to opened/closed state.
 var VELOCITY_THRESHOLD = 0.15;
@@ -4002,8 +4006,6 @@ function filterWhen(p$) {
 
       return p;
     }),
-    /* TODO: drawerWdith could be outdated */
-
     // Now we are save to calculate the current velocity without divide by zero errors.
     _map.map).call(_context, function (_ref3) {
       var _ref4 = _slicedToArray(_ref3, 1),
@@ -4053,7 +4055,7 @@ function subscribeWhen(p$) {
 // to pull the drawer. The x-coordinate *must* be larger than the lower bound,
 // but when the drawer is opened it may be anywhere on the screen.
 // Otherwise it must be below the upper bound.
-function isInRange(clientX, opened) {
+function calcIsInRange(clientX, opened) {
   switch (this.align) {
     case 'left':
       return clientX > this.range[0] && (opened || clientX < this.range[1]);
@@ -4064,11 +4066,32 @@ function isInRange(clientX, opened) {
   }
 }
 
+// #### Calculate 'Is swipe?'
+// If the start and end position are not the same x-coordinate, we call it a 'swipe'.
+// However, if a tap occures during an animation (i.e. `translateX` not in a resting position)
+// we treat it as a swipe as well. The reasons for this are pretty complex:
+// Basically, we want users the be able to stop the animation by putting a finger on the screen.
+// However, if they lift the finger again without swiping, the animation would not continue,
+// because it would not pass the condition below, unless we introduce the second term.
+// TODO: reuse isSlidign observable?
+function calcIsSwipe(_ref9) {
+  var _ref10 = _slicedToArray(_ref9, 3),
+      endX = _ref10[0].clientX,
+      startX = _ref10[1].clientX,
+      translateX = _ref10[2];
+
+  return endX !== startX || translateX > 0 && translateX < this[sDrawerWidth];
+}
+
 // #### Calculate 'Will open?'
 // Based on current velocity and position of the drawer,
 // should the drawer slide open, or snap back?
 // TODO: could incorporate the current open state of the drawer.
-function calcWillOpen(velocity, translateX) {
+function calcWillOpen(_ref11) {
+  var _ref12 = _slicedToArray(_ref11, 4),
+      translateX = _ref12[2],
+      velocity = _ref12[3];
+
   switch (this.align) {
     case 'left':
       {
@@ -4131,6 +4154,7 @@ function prepareInteraction() {
   this[sContentEl].style.willChange = 'transform';
   this[sScrimEl].style.willChange = 'opacity';
   this[sContentEl].classList.remove('hy-drawer-opened');
+  this[_symbols.sFire]('prepare');
 }
 
 function histId() {
@@ -4175,8 +4199,12 @@ function cleanupInteraction(opened) {
 // and the opacity of the scrim, which is handled by `updateDOM`.
 function updateDOM(translateX) {
   var inv = this.align === 'left' ? 1 : -1;
+  var opacity = translateX / this[sDrawerWidth] * inv;
+
   this[sContentEl].style.transform = 'translateX(' + translateX + 'px)';
-  this[sScrimEl].style.opacity = translateX / this[sDrawerWidth] * inv;
+  this[sScrimEl].style.opacity = opacity;
+
+  this[_symbols.sFire]('move', { detail: opacity });
 }
 
 // #### Get start observable
@@ -4193,11 +4221,11 @@ function getStartObservable() {
 
     // The touchstart observable is passive since we won't be calling `preventDefault`.
     // Also, we're only interested in the first `touchstart`.
-    var touchstart$ = (_context4 = (_context4 = _fromEvent.fromEvent.call(_Observable.Observable, document, 'touchstart', { passive: true }), _filter.filter).call(_context4, function (_ref9) {
-      var touches = _ref9.touches;
+    var touchstart$ = (_context4 = (_context4 = _fromEvent.fromEvent.call(_Observable.Observable, document, 'touchstart', { passive: true }), _filter.filter).call(_context4, function (_ref13) {
+      var touches = _ref13.touches;
       return touches.length === 1;
-    }), _map.map).call(_context4, function (_ref10) {
-      var touches = _ref10.touches;
+    }), _map.map).call(_context4, function (_ref14) {
+      var touches = _ref14.touches;
       return touches[0];
     });
 
@@ -4205,7 +4233,19 @@ function getStartObservable() {
     if (!mouseEvents) return touchstart$;
 
     // Otherwise we also include `mousedown` events in the output.
-    var mousedown$ = _fromEvent.fromEvent.call(_Observable.Observable, document, 'mousedown', { passive: true });
+    var mousedown$ = (_context4 = _fromEvent.fromEvent.call(_Observable.Observable, document, 'mousedown'),
+
+    // When the user is sliding, fire the `slidestart` event.
+    // Experimental: Set `overflow: hidden` on some container element.
+
+    // Usually the cleanup code would run at the end of the fling animation,
+    // but since there is no animation in this case, we call it directly.
+
+    // TODO: only fire `slideend` event when slidestart fired as well!?
+    _do._do).call(_context4, function (event) {
+      return assign(event, { event: event });
+    });
+
     return _merge.merge.call(_Observable.Observable, touchstart$, mousedown$);
   });
 }
@@ -4220,12 +4260,12 @@ function getMoveObservable(start$, end$) {
   // we `switchMap` to reflect the changes.
   // Nice: `combineLatest` provides us with the functionality of emitting
   // when either of the inputs change, but not before all inputs have their first value set.
-  return (_context5 = _combineLatest.combineLatest.call(_Observable.Observable, this[sMouseEvents$], this[sPreventDefault$]), _switchMap.switchMap).call(_context5, function (_ref11) {
+  return (_context5 = _combineLatest.combineLatest.call(_Observable.Observable, this[sMouseEvents$], this[sPreventDefault$]), _switchMap.switchMap).call(_context5, function (_ref15) {
     var _context6;
 
-    var _ref12 = _slicedToArray(_ref11, 2),
-        mouseEvents = _ref12[0],
-        preventDefault = _ref12[1];
+    var _ref16 = _slicedToArray(_ref15, 2),
+        mouseEvents = _ref16[0],
+        preventDefault = _ref16[1];
 
     // We're only keeping track of the first finger.
     // Should the user remove the finger that started the interaction, we use the next instead.
@@ -4269,9 +4309,11 @@ function getEndObservable() {
     // We're only interested in the last `touchend`.
     // Otherwise there's at least one finger left on the screen,
     // that can be used to slide the drawer.
-    var touchend$ = (_context8 = _fromEvent.fromEvent.call(_Observable.Observable, document, 'touchend', { passive: true }), _filter.filter).call(_context8, function (_ref13) {
-      var touches = _ref13.touches;
+    var touchend$ = (_context8 = (_context8 = _fromEvent.fromEvent.call(_Observable.Observable, document, 'touchend', { passive: true }), _filter.filter).call(_context8, function (_ref17) {
+      var touches = _ref17.touches;
       return touches.length === 0;
+    }), _map.map).call(_context8, function (event) {
+      return event.changedTouches[0];
     });
 
     // If mouse events aren't enabled, we're done here.
@@ -4295,24 +4337,24 @@ function getIsSlidingObservable(move$, start$) {
   if (this.threshold) {
     var _context9;
 
-    return (_context9 = (_context9 = _withLatestFrom.withLatestFrom.call(move$, start$), _skipWhile.skipWhile).call(_context9, function (_ref14) {
-      var _ref15 = _slicedToArray(_ref14, 2),
-          _ref15$ = _ref15[0],
-          clientX = _ref15$.clientX,
-          clientY = _ref15$.clientY,
-          _ref15$2 = _ref15[1],
-          startX = _ref15$2.clientX,
-          startY = _ref15$2.clientY;
+    return (_context9 = (_context9 = _withLatestFrom.withLatestFrom.call(move$, start$), _skipWhile.skipWhile).call(_context9, function (_ref18) {
+      var _ref19 = _slicedToArray(_ref18, 2),
+          _ref19$ = _ref19[0],
+          clientX = _ref19$.clientX,
+          clientY = _ref19$.clientY,
+          _ref19$2 = _ref19[1],
+          startX = _ref19$2.clientX,
+          startY = _ref19$2.clientY;
 
       return abs(startY - clientY) < _this2.threshold && abs(startX - clientX) < _this2.threshold;
-    }), _map.map).call(_context9, function (_ref16) {
-      var _ref17 = _slicedToArray(_ref16, 2),
-          _ref17$ = _ref17[0],
-          clientX = _ref17$.clientX,
-          clientY = _ref17$.clientY,
-          _ref17$2 = _ref17[1],
-          startX = _ref17$2.clientX,
-          startY = _ref17$2.clientY;
+    }), _map.map).call(_context9, function (_ref20) {
+      var _ref21 = _slicedToArray(_ref20, 2),
+          _ref21$ = _ref21[0],
+          clientX = _ref21$.clientX,
+          clientY = _ref21$.clientY,
+          _ref21$2 = _ref21[1],
+          startX = _ref21$2.clientX,
+          startY = _ref21$2.clientY;
 
       return abs(startX - clientX) >= abs(startY - clientY);
     });
@@ -4324,15 +4366,15 @@ function getIsSlidingObservable(move$, start$) {
   } else {
     var _context10;
 
-    return (_context10 = _withLatestFrom.withLatestFrom.call(move$, start$), _map.map).call(_context10, function (_ref18) {
-      var _ref19 = _slicedToArray(_ref18, 2),
-          _ref19$ = _ref19[0],
-          clientX = _ref19$.clientX,
-          clientY = _ref19$.clientY,
-          event = _ref19$.event,
-          _ref19$2 = _ref19[1],
-          startX = _ref19$2.clientX,
-          startY = _ref19$2.clientY;
+    return (_context10 = _withLatestFrom.withLatestFrom.call(move$, start$), _map.map).call(_context10, function (_ref22) {
+      var _ref23 = _slicedToArray(_ref22, 2),
+          _ref23$ = _ref23[0],
+          clientX = _ref23$.clientX,
+          clientY = _ref23$.clientY,
+          event = _ref23$.event,
+          _ref23$2 = _ref23[1],
+          startX = _ref23$2.clientX,
+          startY = _ref23$2.clientY;
 
       var isSliding = abs(startX - clientX) >= abs(startY - clientY);
       if (_this2.preventDefault && isSliding) event.preventDefault();
@@ -4357,14 +4399,29 @@ function setupObservables() {
   this[sBackButton$] = new _Subject.Subject();
   this[sAnimateTo$] = new _Subject.Subject();
 
+  // An observable of resize events.
+  var resize$ = (_context11 = (_context11 = _fromEvent.fromEvent.call(_Observable.Observable, window, 'resize', { passive: true })
+  // ::debounceTime(100)
+  ,
+
+  // `share`ing the observable between many subscribers:
+  _share.share).call(_context11),
+  // The initial velocity is zero.
+  _startWith.startWith).call(_context11, {});
+
+  // Keep measurements up-to-date.
+  // Note that we need to temporarily remove the opened class to get the correct measures.
+  resize$.subscribe(function () {
+    if (_this3.opened) _this3[sContentEl].classList.remove('hy-drawer-opened');
+    _this3[sDrawerWidth] = getMovableDrawerWidth.call(_this3);
+    if (_this3.opened) _this3[sContentEl].classList.add('hy-drawer-opened');
+  });
+
   // Emitts a value every time you change the `persistent` property of the drawer.
   // Interally, we invert it and call it `active`.
   var active$ = (_context11 = (_context11 = this[sPersitent$], _map.map).call(_context11, function (x) {
     return !x;
-  }),
-
-  // `share`ing the observable between many subscribers:
-  _share.share).call(_context11);
+  }), _share.share).call(_context11);
 
   // We use this to get references to observables that aren't defined yet.
   var ref = {};
@@ -4386,21 +4443,17 @@ function setupObservables() {
   });
 
   // TODO: ...
-  var isInRange$ = (_context11 = (_context11 = (_context11 = _withLatestFrom.withLatestFrom.call(start$, isScrimVisible$), _map.map).call(_context11, function (_ref20) {
-    var _ref21 = _slicedToArray(_ref20, 2),
-        clientX = _ref21[0].clientX,
-        isScrimVisible = _ref21[1];
+  var isInRange$ = (_context11 = (_context11 = (_context11 = _withLatestFrom.withLatestFrom.call(start$, isScrimVisible$), _map.map).call(_context11, function (_ref24) {
+    var _ref25 = _slicedToArray(_ref24, 2),
+        clientX = _ref25[0].clientX,
+        isScrimVisible = _ref25[1];
 
-    return isInRange.call(_this3, clientX, isScrimVisible);
-  }),
-
-  // When the user is sliding, fire the `slidestart` event.
-  // Experimental: Set `overflow: hidden` on some container element.
-
-  // Usually the cleanup code would run at the end of the fling animation,
-  // but since there is no animation in this case, we call it directly.
-  _do._do).call(_context11, function (inRange) {
-    if (inRange) prepareInteraction.call(_this3);
+    return calcIsInRange.call(_this3, clientX, isScrimVisible);
+  }), _do._do).call(_context11, function (inRange) {
+    if (inRange) {
+      if (_this3.mouseEvents) _this3[sContentEl].classList.add('hy-drawer-grabbing');
+      prepareInteraction.call(_this3);
+    }
   }), _share.share).call(_context11);
 
   // #### End observable
@@ -4420,9 +4473,7 @@ function setupObservables() {
   // (see [`getIsSlidingObservable`](#get-is-sliding-observable)),
   // then it remains `true`/`false` for the remainder of the interaction,
   // and is `undefined` again once the interaction `end`s.
-  var isSliding$ = (_context11 = (_context11 = (_context11 = (_context11 = getIsSlidingObservable.call(this, move$, start$), _take.take).call(_context11, 1),
-  // The initial velocity is zero.
-  _startWith.startWith).call(_context11, undefined), _repeatWhen.repeatWhen).call(_context11, function () {
+  var isSliding$ = (_context11 = (_context11 = (_context11 = (_context11 = getIsSlidingObservable.call(this, move$, start$), _take.take).call(_context11, 1), _startWith.startWith).call(_context11, undefined), _repeatWhen.repeatWhen).call(_context11, function () {
     return end$;
   }), _do._do).call(_context11, function (isSliding) {
     if (isSliding) {
@@ -4449,14 +4500,14 @@ function setupObservables() {
     // We only let move events modify the drawer's position when we are sure
     // that the user is sliding. In case the `preventDefault` option is enabled,
     // this is also when we're sure to call `preventDefault`.
-    (_context13 = (_context13 = (_context13 = filterWhen.call(move$, isSliding$), _do._do).call(_context13, function (_ref22) {
-      var event = _ref22.event;
+    (_context13 = (_context13 = (_context13 = filterWhen.call(move$, isSliding$), _do._do).call(_context13, function (_ref26) {
+      var event = _ref26.event;
       if (_this3.preventDefault) event.preventDefault();
-    }), _withLatestFrom.withLatestFrom).call(_context13, start$, ref.startTranslateX$), _map.map).call(_context13, function (_ref23) {
-      var _ref24 = _slicedToArray(_ref23, 3),
-          clientX = _ref24[0].clientX,
-          startX = _ref24[1].clientX,
-          startTranslateX = _ref24[2];
+    }), _withLatestFrom.withLatestFrom).call(_context13, start$, ref.startTranslateX$), _map.map).call(_context13, function (_ref27) {
+      var _ref28 = _slicedToArray(_ref27, 3),
+          clientX = _ref28[0].clientX,
+          startX = _ref28[1].clientX,
+          startTranslateX = _ref28[2];
 
       return calcTranslateX.call(_this3, clientX, startX, startTranslateX);
     }),
@@ -4470,15 +4521,15 @@ function setupObservables() {
     // When the `opened` state changes, we "jump" to the new position,
     // which is either 0 (when closed) or the width of the drawer (when open).
     // We also want to jump when `align` chagnes, in this case to the other side of the viewport.
-    (_context13 = (_context13 = _combineLatest.combineLatest.call(_Observable.Observable, _this3[sOpened$], _this3[sAlign$]), _do._do).call(_context13, function (_ref25) {
-      var _ref26 = _slicedToArray(_ref25, 1),
-          opened = _ref26[0];
+    (_context13 = (_context13 = _combineLatest.combineLatest.call(_Observable.Observable, _this3[sOpened$], _this3[sAlign$], resize$), _do._do).call(_context13, function (_ref29) {
+      var _ref30 = _slicedToArray(_ref29, 1),
+          opened = _ref30[0];
 
       return cleanupInteraction.call(_this3, opened);
-    }), _map.map).call(_context13, function (_ref27) {
-      var _ref28 = _slicedToArray(_ref27, 2),
-          opened = _ref28[0],
-          align = _ref28[1];
+    }), _map.map).call(_context13, function (_ref31) {
+      var _ref32 = _slicedToArray(_ref31, 2),
+          opened = _ref32[0],
+          align = _ref32[1];
 
       return !opened ? 0 : _this3[sDrawerWidth] * (align === 'left' ? 1 : -1);
     }));
@@ -4495,43 +4546,37 @@ function setupObservables() {
   // the current velocity of the drawer,
   // which we will use to determine whether the drawer should flinging in its direction,
   // or snap back into place.
-  var velocity$ = (_context11 = (_context11 = (_context11 = (_context11 = (_context11 = ref.translateX$, _timestamp.timestamp).call(_context11), _pairwise.pairwise).call(_context11), _filter.filter).call(_context11, function (_ref29) {
-    var _ref30 = _slicedToArray(_ref29, 2),
-        prevTime = _ref30[0].timestamp,
-        time = _ref30[1].timestamp;
+  var velocity$ = (_context11 = (_context11 = (_context11 = (_context11 = (_context11 = ref.translateX$, _timestamp.timestamp).call(_context11), _pairwise.pairwise).call(_context11), _filter.filter).call(_context11, function (_ref33) {
+    var _ref34 = _slicedToArray(_ref33, 2),
+        prevTime = _ref34[0].timestamp,
+        time = _ref34[1].timestamp;
 
     return time - prevTime > 0;
-  }), _map.map).call(_context11, function (_ref31) {
-    var _ref32 = _slicedToArray(_ref31, 2),
-        _ref32$ = _ref32[0],
-        prevX = _ref32$.value,
-        prevTime = _ref32$.timestamp,
-        _ref32$2 = _ref32[1],
-        x = _ref32$2.value,
-        time = _ref32$2.timestamp;
+  }), _map.map).call(_context11, function (_ref35) {
+    var _ref36 = _slicedToArray(_ref35, 2),
+        _ref36$ = _ref36[0],
+        prevX = _ref36$.value,
+        prevTime = _ref36$.timestamp,
+        _ref36$2 = _ref36[1],
+        x = _ref36$2.value,
+        time = _ref36$2.timestamp;
 
     return (x - prevX) / (time - prevTime);
   }), _startWith.startWith).call(_context11, 0);
 
+  // TODO
+  var willOpen$ = (_context11 = (_context11 = (_context11 = (_context11 = _do._do.call(end$, function () {
+    _this3[sContentEl].classList.remove('hy-drawer-grabbing');
+  }), _withLatestFrom.withLatestFrom).call(_context11, start$, ref.translateX$, velocity$), _filter.filter).call(_context11, calcIsSwipe.bind(this)), _map.map).call(_context11, calcWillOpen.bind(this)), _do._do).call(_context11, function (willOpen) {
+    return _this3[_symbols.sFire]('slideend', { detail: willOpen });
+  });
+
   // There are 2 things that can trigger an animation:
   // 1. The end of an interaction, i.e. the user releases the finger/mouse while moving the slider.
   // 2. A call to a method like `open` or `close` (represented by a value on the animate observable)
-  var tweenTrigger$ = _merge.merge.call(_Observable.Observable,
-  // 1) When the user releases the finger/mouse, we take the current velocity of the drawer and
-  // calculate whether it should open or close.
-  (_context11 = (_context11 = _withLatestFrom.withLatestFrom.call(end$, ref.translateX$, velocity$), _map.map).call(_context11, function (_ref33) {
-    var _ref34 = _slicedToArray(_ref33, 3),
-        translateX = _ref34[1],
-        velocity = _ref34[2];
-
-    return calcWillOpen.call(_this3, velocity, translateX);
-  }), _do._do).call(_context11, function (willOpen) {
-    return _this3[_symbols.sFire]('slideend', { detail: willOpen });
-  }),
-
-  // 2) In this case we need to call the prepare code directly,
-  // which would have been called at the beginning of the interaction otherwise.
-  (_context11 = this[sAnimateTo$], _do._do).call(_context11, prepareInteraction.bind(this)));
+  //    Note that we call `prepareInteraction` manually here, because it wasn't triggered by a
+  //    prior `touchdown`/`mousedown` event in this case.
+  var tweenTrigger$ = _merge.merge.call(_Observable.Observable, willOpen$, (_context11 = this[sAnimateTo$], _do._do).call(_context11, prepareInteraction.bind(this)));
 
   // We silently set the new `opened` state here,
   // so that the next interaction will do the right thing even while the animation is
@@ -4540,20 +4585,21 @@ function setupObservables() {
   ref.tween$ = (_context11 = (_context11 = _do._do.call(tweenTrigger$, function (willOpen) {
     _this3[_symbols.sSetState]('opened', willOpen);
     if (_this3[sScrollEl] && !willOpen) _this3[sScrollEl].style.overflow = '';
-  }), _withLatestFrom.withLatestFrom).call(_context11, ref.translateX$), _switchMap.switchMap).call(_context11, function (_ref35) {
+  }), _withLatestFrom.withLatestFrom).call(_context11, ref.translateX$), _switchMap.switchMap).call(_context11, function (_ref37) {
     var _context14;
 
-    var _ref36 = _slicedToArray(_ref35, 2),
-        opened = _ref36[0],
-        translateX = _ref36[1];
+    var _ref38 = _slicedToArray(_ref37, 2),
+        opened = _ref38[0],
+        translateX = _ref38[1];
 
     // We return a tween observable that runs cleanup code when it completes
     // --- unless a new interaction is initiated, in which case it is canceled.
     var inv = _this3.align === 'left' ? 1 : -1;
     var endTranslateX = opened ? _this3[sDrawerWidth] * inv : 0;
     var diffTranslateX = endTranslateX - translateX;
+    var duration = BASE_DURATION + _this3[sDrawerWidth] * WIDTH_CONTRIBUTION;
 
-    return (_context14 = (_context14 = (_context14 = (0, _common.createTween)(_common.linearTween, translateX, diffTranslateX, TRANSITION_DURATION), _do._do).call(_context14, { complete: function complete() {
+    return (_context14 = (_context14 = (_context14 = (0, _common.createTween)(_common.easeOutSine, translateX, diffTranslateX, duration), _do._do).call(_context14, { complete: function complete() {
         return _this3[sOpened$].next(opened);
       } }), _takeUntil.takeUntil).call(_context14, start$), _takeUntil.takeUntil).call(_context14, _this3[sAlign$]);
   });
@@ -4588,6 +4634,21 @@ function setupObservables() {
     var hash = '#' + histId.call(_this3) + '--opened';
     var willOpen = window.location.hash === hash;
     if (willOpen !== _this3.opened) _this3[sAnimateTo$].next(willOpen);
+  });
+
+  // When drawing with mouse is enabled, we add the grab cursor to the drawer.
+  // We also want to call `preventDefault` when `mousedown` is within the drawer range
+  // to prevent text selection while sliding.
+  (_context11 = this[sMouseEvents$], _switchMap.switchMap).call(_context11, function (mouseEvents) {
+    if (mouseEvents) _this3[sContentEl].classList.add('hy-drawer-grab');else _this3[sContentEl].classList.remove('hy-drawer-grab');
+
+    return mouseEvents ? _withLatestFrom.withLatestFrom.call(start$, isInRange$) : _never.never.call(_Observable.Observable);
+  }).subscribe(function (_ref39) {
+    var _ref40 = _slicedToArray(_ref39, 2),
+        event = _ref40[0].event,
+        isInRange = _ref40[1];
+
+    if (isInRange && event) event.preventDefault();
   });
 
   // Now we set the initial opend state.
@@ -4625,9 +4686,6 @@ function drawerMixin(C) {
       // ### Setup
       // Overriding the setup function.
       value: function value(el, props) {
-        var _context15,
-            _this5 = this;
-
         _get(_class.prototype.__proto__ || Object.getPrototypeOf(_class.prototype), _symbols.sSetup, this).call(this, el, props);
 
         // Cache DOM elements.
@@ -4637,17 +4695,6 @@ function drawerMixin(C) {
 
         // Set the initial alignment class.
         this[sContentEl].classList.add('hy-drawer-' + this.align);
-
-        // Measure the current drawer width...
-        this[sDrawerWidth] = getMovableDrawerWidth.call(this);
-
-        // ...and keep it up-to-date.
-        // Note that we need to temporarily remove the opened class to get the correct measures.
-        (_context15 = _fromEvent.fromEvent.call(_Observable.Observable, window, 'resize', { passive: true }), _debounceTime.debounceTime).call(_context15, 100).subscribe(function () {
-          if (_this5.opened) _this5[sContentEl].classList.remove('hy-drawer-opened');
-          _this5[sDrawerWidth] = getMovableDrawerWidth.call(_this5);
-          if (_this5.opened) _this5[sContentEl].classList.add('hy-drawer-opened');
-        });
 
         // Finally, calling the [setup observables function](#setup-observables) function.
         setupObservables.call(this);
@@ -4673,7 +4720,6 @@ function drawerMixin(C) {
         var animated = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
         if (animated) this[sAnimateTo$].next(true);else this.opened = true;
-        return this;
       }
     }, {
       key: 'close',
@@ -4681,7 +4727,6 @@ function drawerMixin(C) {
         var animated = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
         if (animated) this[sAnimateTo$].next(false);else this.opened = false;
-        return this;
       }
     }, {
       key: 'toggle',
@@ -4689,7 +4734,6 @@ function drawerMixin(C) {
         var animated = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
         if (animated) this[sAnimateTo$].next(!this.opened);else this.opened = !this.opened;
-        return this;
       }
     }], [{
       key: 'componentName',
@@ -4804,7 +4848,7 @@ $export($export.P, 'Function', { bind: __webpack_require__(106) });
 
 "use strict";
 
-var aFunction = __webpack_require__(48);
+var aFunction = __webpack_require__(47);
 var isObject = __webpack_require__(12);
 var invoke = __webpack_require__(107);
 var arraySlice = [].slice;
@@ -4869,11 +4913,11 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(109) });
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(33);
+var getKeys = __webpack_require__(32);
 var gOPS = __webpack_require__(110);
 var pIE = __webpack_require__(111);
 var toObject = __webpack_require__(16);
-var IObject = __webpack_require__(34);
+var IObject = __webpack_require__(33);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -4933,15 +4977,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.componentMixin = componentMixin;
 
-__webpack_require__(54);
+__webpack_require__(53);
 
-__webpack_require__(61);
+__webpack_require__(60);
 
 __webpack_require__(113);
 
-__webpack_require__(55);
+__webpack_require__(54);
 
-var _common = __webpack_require__(38);
+var _common = __webpack_require__(37);
 
 var _symbols = __webpack_require__(18);
 
@@ -5649,8 +5693,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var tryCatch_1 = __webpack_require__(40);
-var isFunction_1 = __webpack_require__(39);
+var tryCatch_1 = __webpack_require__(39);
+var isFunction_1 = __webpack_require__(38);
 var errorObject_1 = __webpack_require__(23);
 var Subscription_1 = __webpack_require__(9);
 var toString = Object.prototype.toString;
@@ -5875,8 +5919,8 @@ exports.merge = merge_1.mergeStatic;
 
 "use strict";
 
-var merge_1 = __webpack_require__(64);
-var merge_2 = __webpack_require__(64);
+var merge_1 = __webpack_require__(63);
+var merge_2 = __webpack_require__(63);
 exports.mergeStatic = merge_2.mergeStatic;
 /* tslint:enable:max-line-length */
 /**
@@ -6148,7 +6192,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var noop_1 = __webpack_require__(60);
+var noop_1 = __webpack_require__(59);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -6383,500 +6427,7 @@ var DoSubscriber = (function (_super) {
 
 "use strict";
 
-var async_1 = __webpack_require__(26);
-var debounceTime_1 = __webpack_require__(137);
-/**
- * Emits a value from the source Observable only after a particular time span
- * has passed without another source emission.
- *
- * <span class="informal">It's like {@link delay}, but passes only the most
- * recent value from each burst of emissions.</span>
- *
- * <img src="./img/debounceTime.png" width="100%">
- *
- * `debounceTime` delays values emitted by the source Observable, but drops
- * previous pending delayed emissions if a new value arrives on the source
- * Observable. This operator keeps track of the most recent value from the
- * source Observable, and emits that only when `dueTime` enough time has passed
- * without any other value appearing on the source Observable. If a new value
- * appears before `dueTime` silence occurs, the previous value will be dropped
- * and will not be emitted on the output Observable.
- *
- * This is a rate-limiting operator, because it is impossible for more than one
- * value to be emitted in any time window of duration `dueTime`, but it is also
- * a delay-like operator since output emissions do not occur at the same time as
- * they did on the source Observable. Optionally takes a {@link IScheduler} for
- * managing timers.
- *
- * @example <caption>Emit the most recent click after a burst of clicks</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.debounceTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link auditTime}
- * @see {@link debounce}
- * @see {@link delay}
- * @see {@link sampleTime}
- * @see {@link throttleTime}
- *
- * @param {number} dueTime The timeout duration in milliseconds (or the time
- * unit determined internally by the optional `scheduler`) for the window of
- * time required to wait for emission silence before emitting the most recent
- * source value.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the timeout for each value.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified `dueTime`, and may drop some values if they occur
- * too frequently.
- * @method debounceTime
- * @owner Observable
- */
-function debounceTime(dueTime, scheduler) {
-    if (scheduler === void 0) { scheduler = async_1.async; }
-    return debounceTime_1.debounceTime(dueTime, scheduler)(this);
-}
-exports.debounceTime = debounceTime;
-//# sourceMappingURL=debounceTime.js.map
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var root_1 = __webpack_require__(4);
-var Action_1 = __webpack_require__(134);
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var AsyncAction = (function (_super) {
-    __extends(AsyncAction, _super);
-    function AsyncAction(scheduler, work) {
-        _super.call(this, scheduler, work);
-        this.scheduler = scheduler;
-        this.work = work;
-        this.pending = false;
-    }
-    AsyncAction.prototype.schedule = function (state, delay) {
-        if (delay === void 0) { delay = 0; }
-        if (this.closed) {
-            return this;
-        }
-        // Always replace the current state with the new state.
-        this.state = state;
-        // Set the pending flag indicating that this action has been scheduled, or
-        // has recursively rescheduled itself.
-        this.pending = true;
-        var id = this.id;
-        var scheduler = this.scheduler;
-        //
-        // Important implementation note:
-        //
-        // Actions only execute once by default, unless rescheduled from within the
-        // scheduled callback. This allows us to implement single and repeat
-        // actions via the same code path, without adding API surface area, as well
-        // as mimic traditional recursion but across asynchronous boundaries.
-        //
-        // However, JS runtimes and timers distinguish between intervals achieved by
-        // serial `setTimeout` calls vs. a single `setInterval` call. An interval of
-        // serial `setTimeout` calls can be individually delayed, which delays
-        // scheduling the next `setTimeout`, and so on. `setInterval` attempts to
-        // guarantee the interval callback will be invoked more precisely to the
-        // interval period, regardless of load.
-        //
-        // Therefore, we use `setInterval` to schedule single and repeat actions.
-        // If the action reschedules itself with the same delay, the interval is not
-        // canceled. If the action doesn't reschedule, or reschedules with a
-        // different delay, the interval will be canceled after scheduled callback
-        // execution.
-        //
-        if (id != null) {
-            this.id = this.recycleAsyncId(scheduler, id, delay);
-        }
-        this.delay = delay;
-        // If this action has already an async Id, don't request a new one.
-        this.id = this.id || this.requestAsyncId(scheduler, this.id, delay);
-        return this;
-    };
-    AsyncAction.prototype.requestAsyncId = function (scheduler, id, delay) {
-        if (delay === void 0) { delay = 0; }
-        return root_1.root.setInterval(scheduler.flush.bind(scheduler, this), delay);
-    };
-    AsyncAction.prototype.recycleAsyncId = function (scheduler, id, delay) {
-        if (delay === void 0) { delay = 0; }
-        // If this action is rescheduled with the same delay time, don't clear the interval id.
-        if (delay !== null && this.delay === delay && this.pending === false) {
-            return id;
-        }
-        // Otherwise, if the action's delay time is different from the current delay,
-        // or the action has been rescheduled before it's executed, clear the interval id
-        return root_1.root.clearInterval(id) && undefined || undefined;
-    };
-    /**
-     * Immediately executes this action and the `work` it contains.
-     * @return {any}
-     */
-    AsyncAction.prototype.execute = function (state, delay) {
-        if (this.closed) {
-            return new Error('executing a cancelled action');
-        }
-        this.pending = false;
-        var error = this._execute(state, delay);
-        if (error) {
-            return error;
-        }
-        else if (this.pending === false && this.id != null) {
-            // Dequeue if the action didn't reschedule itself. Don't call
-            // unsubscribe(), because the action could reschedule later.
-            // For example:
-            // ```
-            // scheduler.schedule(function doWork(counter) {
-            //   /* ... I'm a busy worker bee ... */
-            //   var originalAction = this;
-            //   /* wait 100ms before rescheduling the action */
-            //   setTimeout(function () {
-            //     originalAction.schedule(counter + 1);
-            //   }, 100);
-            // }, 1000);
-            // ```
-            this.id = this.recycleAsyncId(this.scheduler, this.id, null);
-        }
-    };
-    AsyncAction.prototype._execute = function (state, delay) {
-        var errored = false;
-        var errorValue = undefined;
-        try {
-            this.work(state);
-        }
-        catch (e) {
-            errored = true;
-            errorValue = !!e && e || new Error(e);
-        }
-        if (errored) {
-            this.unsubscribe();
-            return errorValue;
-        }
-    };
-    AsyncAction.prototype._unsubscribe = function () {
-        var id = this.id;
-        var scheduler = this.scheduler;
-        var actions = scheduler.actions;
-        var index = actions.indexOf(this);
-        this.work = null;
-        this.state = null;
-        this.pending = false;
-        this.scheduler = null;
-        if (index !== -1) {
-            actions.splice(index, 1);
-        }
-        if (id != null) {
-            this.id = this.recycleAsyncId(scheduler, id, null);
-        }
-        this.delay = null;
-    };
-    return AsyncAction;
-}(Action_1.Action));
-exports.AsyncAction = AsyncAction;
-//# sourceMappingURL=AsyncAction.js.map
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Subscription_1 = __webpack_require__(9);
-/**
- * A unit of work to be executed in a {@link Scheduler}. An action is typically
- * created from within a Scheduler and an RxJS user does not need to concern
- * themselves about creating and manipulating an Action.
- *
- * ```ts
- * class Action<T> extends Subscription {
- *   new (scheduler: Scheduler, work: (state?: T) => void);
- *   schedule(state?: T, delay: number = 0): Subscription;
- * }
- * ```
- *
- * @class Action<T>
- */
-var Action = (function (_super) {
-    __extends(Action, _super);
-    function Action(scheduler, work) {
-        _super.call(this);
-    }
-    /**
-     * Schedules this action on its parent Scheduler for execution. May be passed
-     * some context object, `state`. May happen at some point in the future,
-     * according to the `delay` parameter, if specified.
-     * @param {T} [state] Some contextual data that the `work` function uses when
-     * called by the Scheduler.
-     * @param {number} [delay] Time to wait before executing the work, where the
-     * time unit is implicit and defined by the Scheduler.
-     * @return {void}
-     */
-    Action.prototype.schedule = function (state, delay) {
-        if (delay === void 0) { delay = 0; }
-        return this;
-    };
-    return Action;
-}(Subscription_1.Subscription));
-exports.Action = Action;
-//# sourceMappingURL=Action.js.map
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Scheduler_1 = __webpack_require__(136);
-var AsyncScheduler = (function (_super) {
-    __extends(AsyncScheduler, _super);
-    function AsyncScheduler() {
-        _super.apply(this, arguments);
-        this.actions = [];
-        /**
-         * A flag to indicate whether the Scheduler is currently executing a batch of
-         * queued actions.
-         * @type {boolean}
-         */
-        this.active = false;
-        /**
-         * An internal ID used to track the latest asynchronous task such as those
-         * coming from `setTimeout`, `setInterval`, `requestAnimationFrame`, and
-         * others.
-         * @type {any}
-         */
-        this.scheduled = undefined;
-    }
-    AsyncScheduler.prototype.flush = function (action) {
-        var actions = this.actions;
-        if (this.active) {
-            actions.push(action);
-            return;
-        }
-        var error;
-        this.active = true;
-        do {
-            if (error = action.execute(action.state, action.delay)) {
-                break;
-            }
-        } while (action = actions.shift()); // exhaust the scheduler queue
-        this.active = false;
-        if (error) {
-            while (action = actions.shift()) {
-                action.unsubscribe();
-            }
-            throw error;
-        }
-    };
-    return AsyncScheduler;
-}(Scheduler_1.Scheduler));
-exports.AsyncScheduler = AsyncScheduler;
-//# sourceMappingURL=AsyncScheduler.js.map
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/**
- * An execution context and a data structure to order tasks and schedule their
- * execution. Provides a notion of (potentially virtual) time, through the
- * `now()` getter method.
- *
- * Each unit of work in a Scheduler is called an {@link Action}.
- *
- * ```ts
- * class Scheduler {
- *   now(): number;
- *   schedule(work, delay?, state?): Subscription;
- * }
- * ```
- *
- * @class Scheduler
- */
-var Scheduler = (function () {
-    function Scheduler(SchedulerAction, now) {
-        if (now === void 0) { now = Scheduler.now; }
-        this.SchedulerAction = SchedulerAction;
-        this.now = now;
-    }
-    /**
-     * Schedules a function, `work`, for execution. May happen at some point in
-     * the future, according to the `delay` parameter, if specified. May be passed
-     * some context object, `state`, which will be passed to the `work` function.
-     *
-     * The given arguments will be processed an stored as an Action object in a
-     * queue of actions.
-     *
-     * @param {function(state: ?T): ?Subscription} work A function representing a
-     * task, or some unit of work to be executed by the Scheduler.
-     * @param {number} [delay] Time to wait before executing the work, where the
-     * time unit is implicit and defined by the Scheduler itself.
-     * @param {T} [state] Some contextual data that the `work` function uses when
-     * called by the Scheduler.
-     * @return {Subscription} A subscription in order to be able to unsubscribe
-     * the scheduled work.
-     */
-    Scheduler.prototype.schedule = function (work, delay, state) {
-        if (delay === void 0) { delay = 0; }
-        return new this.SchedulerAction(this, work).schedule(state, delay);
-    };
-    Scheduler.now = Date.now ? Date.now : function () { return +new Date(); };
-    return Scheduler;
-}());
-exports.Scheduler = Scheduler;
-//# sourceMappingURL=Scheduler.js.map
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Subscriber_1 = __webpack_require__(1);
-var async_1 = __webpack_require__(26);
-/**
- * Emits a value from the source Observable only after a particular time span
- * has passed without another source emission.
- *
- * <span class="informal">It's like {@link delay}, but passes only the most
- * recent value from each burst of emissions.</span>
- *
- * <img src="./img/debounceTime.png" width="100%">
- *
- * `debounceTime` delays values emitted by the source Observable, but drops
- * previous pending delayed emissions if a new value arrives on the source
- * Observable. This operator keeps track of the most recent value from the
- * source Observable, and emits that only when `dueTime` enough time has passed
- * without any other value appearing on the source Observable. If a new value
- * appears before `dueTime` silence occurs, the previous value will be dropped
- * and will not be emitted on the output Observable.
- *
- * This is a rate-limiting operator, because it is impossible for more than one
- * value to be emitted in any time window of duration `dueTime`, but it is also
- * a delay-like operator since output emissions do not occur at the same time as
- * they did on the source Observable. Optionally takes a {@link IScheduler} for
- * managing timers.
- *
- * @example <caption>Emit the most recent click after a burst of clicks</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.debounceTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link auditTime}
- * @see {@link debounce}
- * @see {@link delay}
- * @see {@link sampleTime}
- * @see {@link throttleTime}
- *
- * @param {number} dueTime The timeout duration in milliseconds (or the time
- * unit determined internally by the optional `scheduler`) for the window of
- * time required to wait for emission silence before emitting the most recent
- * source value.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the timeout for each value.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified `dueTime`, and may drop some values if they occur
- * too frequently.
- * @method debounceTime
- * @owner Observable
- */
-function debounceTime(dueTime, scheduler) {
-    if (scheduler === void 0) { scheduler = async_1.async; }
-    return function (source) { return source.lift(new DebounceTimeOperator(dueTime, scheduler)); };
-}
-exports.debounceTime = debounceTime;
-var DebounceTimeOperator = (function () {
-    function DebounceTimeOperator(dueTime, scheduler) {
-        this.dueTime = dueTime;
-        this.scheduler = scheduler;
-    }
-    DebounceTimeOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new DebounceTimeSubscriber(subscriber, this.dueTime, this.scheduler));
-    };
-    return DebounceTimeOperator;
-}());
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var DebounceTimeSubscriber = (function (_super) {
-    __extends(DebounceTimeSubscriber, _super);
-    function DebounceTimeSubscriber(destination, dueTime, scheduler) {
-        _super.call(this, destination);
-        this.dueTime = dueTime;
-        this.scheduler = scheduler;
-        this.debouncedSubscription = null;
-        this.lastValue = null;
-        this.hasValue = false;
-    }
-    DebounceTimeSubscriber.prototype._next = function (value) {
-        this.clearDebounce();
-        this.lastValue = value;
-        this.hasValue = true;
-        this.add(this.debouncedSubscription = this.scheduler.schedule(dispatchNext, this.dueTime, this));
-    };
-    DebounceTimeSubscriber.prototype._complete = function () {
-        this.debouncedNext();
-        this.destination.complete();
-    };
-    DebounceTimeSubscriber.prototype.debouncedNext = function () {
-        this.clearDebounce();
-        if (this.hasValue) {
-            this.destination.next(this.lastValue);
-            this.lastValue = null;
-            this.hasValue = false;
-        }
-    };
-    DebounceTimeSubscriber.prototype.clearDebounce = function () {
-        var debouncedSubscription = this.debouncedSubscription;
-        if (debouncedSubscription !== null) {
-            this.remove(debouncedSubscription);
-            debouncedSubscription.unsubscribe();
-            this.debouncedSubscription = null;
-        }
-    };
-    return DebounceTimeSubscriber;
-}(Subscriber_1.Subscriber));
-function dispatchNext(subscriber) {
-    subscriber.debouncedNext();
-}
-//# sourceMappingURL=debounceTime.js.map
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var filter_1 = __webpack_require__(139);
+var filter_1 = __webpack_require__(133);
 /* tslint:enable:max-line-length */
 /**
  * Filter items emitted by the source Observable by only emitting those that
@@ -6924,7 +6475,7 @@ exports.filter = filter;
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 139 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7024,12 +6575,12 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 140 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var map_1 = __webpack_require__(66);
+var map_1 = __webpack_require__(65);
 /**
  * Applies a given `project` function to each value emitted by the source
  * Observable, and emits the resulting values as an Observable.
@@ -7070,12 +6621,12 @@ exports.map = map;
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 141 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mapTo_1 = __webpack_require__(142);
+var mapTo_1 = __webpack_require__(136);
 /**
  * Emits the given constant value on the output Observable every time the source
  * Observable emits a value.
@@ -7109,7 +6660,7 @@ exports.mapTo = mapTo;
 //# sourceMappingURL=mapTo.js.map
 
 /***/ }),
-/* 142 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7178,12 +6729,12 @@ var MapToSubscriber = (function (_super) {
 //# sourceMappingURL=mapTo.js.map
 
 /***/ }),
-/* 143 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var pairwise_1 = __webpack_require__(144);
+var pairwise_1 = __webpack_require__(138);
 /**
  * Groups pairs of consecutive emissions together and emits them as an array of
  * two values.
@@ -7226,7 +6777,7 @@ exports.pairwise = pairwise;
 //# sourceMappingURL=pairwise.js.map
 
 /***/ }),
-/* 144 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7309,12 +6860,12 @@ var PairwiseSubscriber = (function (_super) {
 //# sourceMappingURL=pairwise.js.map
 
 /***/ }),
-/* 145 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var repeatWhen_1 = __webpack_require__(146);
+var repeatWhen_1 = __webpack_require__(140);
 /**
  * Returns an Observable that mirrors the source Observable with the exception of a `complete`. If the source
  * Observable calls `complete`, this method will emit to the Observable returned from `notifier`. If that Observable
@@ -7336,7 +6887,7 @@ exports.repeatWhen = repeatWhen;
 //# sourceMappingURL=repeatWhen.js.map
 
 /***/ }),
-/* 146 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7347,7 +6898,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subject_1 = __webpack_require__(24);
-var tryCatch_1 = __webpack_require__(40);
+var tryCatch_1 = __webpack_require__(39);
 var errorObject_1 = __webpack_require__(23);
 var OuterSubscriber_1 = __webpack_require__(5);
 var subscribeToResult_1 = __webpack_require__(6);
@@ -7450,12 +7001,12 @@ var RepeatWhenSubscriber = (function (_super) {
 //# sourceMappingURL=repeatWhen.js.map
 
 /***/ }),
-/* 147 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var sample_1 = __webpack_require__(148);
+var sample_1 = __webpack_require__(142);
 /**
  * Emits the most recently emitted value from the source Observable whenever
  * another Observable, the `notifier`, emits.
@@ -7497,7 +7048,7 @@ exports.sample = sample;
 //# sourceMappingURL=sample.js.map
 
 /***/ }),
-/* 148 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7591,12 +7142,12 @@ var SampleSubscriber = (function (_super) {
 //# sourceMappingURL=sample.js.map
 
 /***/ }),
-/* 149 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var share_1 = __webpack_require__(150);
+var share_1 = __webpack_require__(144);
 /**
  * Returns a new Observable that multicasts (shares) the original Observable. As long as there is at least one
  * Subscriber this Observable will be subscribed and emitting data. When all subscribers have unsubscribed it will
@@ -7621,13 +7172,13 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 150 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(151);
-var refCount_1 = __webpack_require__(67);
+var multicast_1 = __webpack_require__(145);
+var refCount_1 = __webpack_require__(66);
 var Subject_1 = __webpack_require__(24);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
@@ -7652,12 +7203,12 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 151 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(152);
+var ConnectableObservable_1 = __webpack_require__(146);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -7717,7 +7268,7 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 152 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7731,7 +7282,7 @@ var Subject_1 = __webpack_require__(24);
 var Observable_1 = __webpack_require__(0);
 var Subscriber_1 = __webpack_require__(1);
 var Subscription_1 = __webpack_require__(9);
-var refCount_1 = __webpack_require__(67);
+var refCount_1 = __webpack_require__(66);
 /**
  * @class ConnectableObservable<T>
  */
@@ -7893,12 +7444,12 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 153 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var skipWhile_1 = __webpack_require__(154);
+var skipWhile_1 = __webpack_require__(148);
 /**
  * Returns an Observable that skips all items emitted by the source Observable as long as a specified condition holds
  * true, but emits all further source items as soon as the condition becomes false.
@@ -7918,7 +7469,7 @@ exports.skipWhile = skipWhile;
 //# sourceMappingURL=skipWhile.js.map
 
 /***/ }),
-/* 154 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7990,12 +7541,12 @@ var SkipWhileSubscriber = (function (_super) {
 //# sourceMappingURL=skipWhile.js.map
 
 /***/ }),
-/* 155 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var startWith_1 = __webpack_require__(156);
+var startWith_1 = __webpack_require__(150);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the items you specify as arguments before it begins to emit
@@ -8022,15 +7573,15 @@ exports.startWith = startWith;
 //# sourceMappingURL=startWith.js.map
 
 /***/ }),
-/* 156 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var ArrayObservable_1 = __webpack_require__(10);
-var ScalarObservable_1 = __webpack_require__(43);
+var ScalarObservable_1 = __webpack_require__(42);
 var EmptyObservable_1 = __webpack_require__(25);
-var concat_1 = __webpack_require__(157);
+var concat_1 = __webpack_require__(151);
 var isScheduler_1 = __webpack_require__(19);
 /* tslint:enable:max-line-length */
 /**
@@ -8076,15 +7627,15 @@ exports.startWith = startWith;
 //# sourceMappingURL=startWith.js.map
 
 /***/ }),
-/* 157 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var isScheduler_1 = __webpack_require__(19);
-var of_1 = __webpack_require__(158);
-var from_1 = __webpack_require__(159);
-var concatAll_1 = __webpack_require__(166);
+var of_1 = __webpack_require__(152);
+var from_1 = __webpack_require__(153);
+var concatAll_1 = __webpack_require__(160);
 /* tslint:enable:max-line-length */
 /**
  * Creates an output Observable which sequentially emits all values from given
@@ -8193,7 +7744,7 @@ exports.concat = concat;
 //# sourceMappingURL=concat.js.map
 
 /***/ }),
-/* 158 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8203,17 +7754,17 @@ exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 159 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromObservable_1 = __webpack_require__(160);
+var FromObservable_1 = __webpack_require__(154);
 exports.from = FromObservable_1.FromObservable.create;
 //# sourceMappingURL=from.js.map
 
 /***/ }),
-/* 160 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8224,16 +7775,16 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var isArray_1 = __webpack_require__(22);
-var isArrayLike_1 = __webpack_require__(62);
-var isPromise_1 = __webpack_require__(63);
-var PromiseObservable_1 = __webpack_require__(161);
-var IteratorObservable_1 = __webpack_require__(162);
+var isArrayLike_1 = __webpack_require__(61);
+var isPromise_1 = __webpack_require__(62);
+var PromiseObservable_1 = __webpack_require__(155);
+var IteratorObservable_1 = __webpack_require__(156);
 var ArrayObservable_1 = __webpack_require__(10);
-var ArrayLikeObservable_1 = __webpack_require__(163);
-var iterator_1 = __webpack_require__(44);
+var ArrayLikeObservable_1 = __webpack_require__(157);
+var iterator_1 = __webpack_require__(43);
 var Observable_1 = __webpack_require__(0);
-var observeOn_1 = __webpack_require__(164);
-var observable_1 = __webpack_require__(42);
+var observeOn_1 = __webpack_require__(158);
+var observable_1 = __webpack_require__(41);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -8341,7 +7892,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ }),
-/* 161 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8468,7 +8019,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ }),
-/* 162 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8480,7 +8031,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var root_1 = __webpack_require__(4);
 var Observable_1 = __webpack_require__(0);
-var iterator_1 = __webpack_require__(44);
+var iterator_1 = __webpack_require__(43);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -8637,7 +8188,7 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ }),
-/* 163 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8648,7 +8199,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(0);
-var ScalarObservable_1 = __webpack_require__(43);
+var ScalarObservable_1 = __webpack_require__(42);
 var EmptyObservable_1 = __webpack_require__(25);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -8713,7 +8264,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ }),
-/* 164 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8724,7 +8275,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(1);
-var Notification_1 = __webpack_require__(165);
+var Notification_1 = __webpack_require__(159);
 /**
  *
  * Re-emits all notifications from source Observable with specified scheduler.
@@ -8834,7 +8385,7 @@ exports.ObserveOnMessage = ObserveOnMessage;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ }),
-/* 165 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8967,12 +8518,12 @@ exports.Notification = Notification;
 //# sourceMappingURL=Notification.js.map
 
 /***/ }),
-/* 166 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeAll_1 = __webpack_require__(65);
+var mergeAll_1 = __webpack_require__(64);
 /**
  * Converts a higher-order Observable into a first-order Observable by
  * concatenating the inner Observables in order.
@@ -9028,12 +8579,12 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 167 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var switchMap_1 = __webpack_require__(168);
+var switchMap_1 = __webpack_require__(162);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -9089,7 +8640,7 @@ exports.switchMap = switchMap;
 //# sourceMappingURL=switchMap.js.map
 
 /***/ }),
-/* 168 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9237,12 +8788,12 @@ var SwitchMapSubscriber = (function (_super) {
 //# sourceMappingURL=switchMap.js.map
 
 /***/ }),
-/* 169 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var take_1 = __webpack_require__(170);
+var take_1 = __webpack_require__(164);
 /**
  * Emits only the first `count` values emitted by the source Observable.
  *
@@ -9283,7 +8834,7 @@ exports.take = take;
 //# sourceMappingURL=take.js.map
 
 /***/ }),
-/* 170 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9294,7 +8845,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(1);
-var ArgumentOutOfRangeError_1 = __webpack_require__(171);
+var ArgumentOutOfRangeError_1 = __webpack_require__(165);
 var EmptyObservable_1 = __webpack_require__(25);
 /**
  * Emits only the first `count` values emitted by the source Observable.
@@ -9380,7 +8931,7 @@ var TakeSubscriber = (function (_super) {
 //# sourceMappingURL=take.js.map
 
 /***/ }),
-/* 171 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9414,12 +8965,12 @@ exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ }),
-/* 172 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var takeUntil_1 = __webpack_require__(173);
+var takeUntil_1 = __webpack_require__(167);
 /**
  * Emits the values emitted by the source Observable until a `notifier`
  * Observable emits a value.
@@ -9460,7 +9011,7 @@ exports.takeUntil = takeUntil;
 //# sourceMappingURL=takeUntil.js.map
 
 /***/ }),
-/* 173 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9541,13 +9092,13 @@ var TakeUntilSubscriber = (function (_super) {
 //# sourceMappingURL=takeUntil.js.map
 
 /***/ }),
-/* 174 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var async_1 = __webpack_require__(26);
-var timestamp_1 = __webpack_require__(175);
+var async_1 = __webpack_require__(67);
+var timestamp_1 = __webpack_require__(173);
 /**
  * @param scheduler
  * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
@@ -9562,13 +9113,323 @@ exports.timestamp = timestamp;
 //# sourceMappingURL=timestamp.js.map
 
 /***/ }),
-/* 175 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var async_1 = __webpack_require__(26);
-var map_1 = __webpack_require__(66);
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var root_1 = __webpack_require__(4);
+var Action_1 = __webpack_require__(170);
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var AsyncAction = (function (_super) {
+    __extends(AsyncAction, _super);
+    function AsyncAction(scheduler, work) {
+        _super.call(this, scheduler, work);
+        this.scheduler = scheduler;
+        this.work = work;
+        this.pending = false;
+    }
+    AsyncAction.prototype.schedule = function (state, delay) {
+        if (delay === void 0) { delay = 0; }
+        if (this.closed) {
+            return this;
+        }
+        // Always replace the current state with the new state.
+        this.state = state;
+        // Set the pending flag indicating that this action has been scheduled, or
+        // has recursively rescheduled itself.
+        this.pending = true;
+        var id = this.id;
+        var scheduler = this.scheduler;
+        //
+        // Important implementation note:
+        //
+        // Actions only execute once by default, unless rescheduled from within the
+        // scheduled callback. This allows us to implement single and repeat
+        // actions via the same code path, without adding API surface area, as well
+        // as mimic traditional recursion but across asynchronous boundaries.
+        //
+        // However, JS runtimes and timers distinguish between intervals achieved by
+        // serial `setTimeout` calls vs. a single `setInterval` call. An interval of
+        // serial `setTimeout` calls can be individually delayed, which delays
+        // scheduling the next `setTimeout`, and so on. `setInterval` attempts to
+        // guarantee the interval callback will be invoked more precisely to the
+        // interval period, regardless of load.
+        //
+        // Therefore, we use `setInterval` to schedule single and repeat actions.
+        // If the action reschedules itself with the same delay, the interval is not
+        // canceled. If the action doesn't reschedule, or reschedules with a
+        // different delay, the interval will be canceled after scheduled callback
+        // execution.
+        //
+        if (id != null) {
+            this.id = this.recycleAsyncId(scheduler, id, delay);
+        }
+        this.delay = delay;
+        // If this action has already an async Id, don't request a new one.
+        this.id = this.id || this.requestAsyncId(scheduler, this.id, delay);
+        return this;
+    };
+    AsyncAction.prototype.requestAsyncId = function (scheduler, id, delay) {
+        if (delay === void 0) { delay = 0; }
+        return root_1.root.setInterval(scheduler.flush.bind(scheduler, this), delay);
+    };
+    AsyncAction.prototype.recycleAsyncId = function (scheduler, id, delay) {
+        if (delay === void 0) { delay = 0; }
+        // If this action is rescheduled with the same delay time, don't clear the interval id.
+        if (delay !== null && this.delay === delay && this.pending === false) {
+            return id;
+        }
+        // Otherwise, if the action's delay time is different from the current delay,
+        // or the action has been rescheduled before it's executed, clear the interval id
+        return root_1.root.clearInterval(id) && undefined || undefined;
+    };
+    /**
+     * Immediately executes this action and the `work` it contains.
+     * @return {any}
+     */
+    AsyncAction.prototype.execute = function (state, delay) {
+        if (this.closed) {
+            return new Error('executing a cancelled action');
+        }
+        this.pending = false;
+        var error = this._execute(state, delay);
+        if (error) {
+            return error;
+        }
+        else if (this.pending === false && this.id != null) {
+            // Dequeue if the action didn't reschedule itself. Don't call
+            // unsubscribe(), because the action could reschedule later.
+            // For example:
+            // ```
+            // scheduler.schedule(function doWork(counter) {
+            //   /* ... I'm a busy worker bee ... */
+            //   var originalAction = this;
+            //   /* wait 100ms before rescheduling the action */
+            //   setTimeout(function () {
+            //     originalAction.schedule(counter + 1);
+            //   }, 100);
+            // }, 1000);
+            // ```
+            this.id = this.recycleAsyncId(this.scheduler, this.id, null);
+        }
+    };
+    AsyncAction.prototype._execute = function (state, delay) {
+        var errored = false;
+        var errorValue = undefined;
+        try {
+            this.work(state);
+        }
+        catch (e) {
+            errored = true;
+            errorValue = !!e && e || new Error(e);
+        }
+        if (errored) {
+            this.unsubscribe();
+            return errorValue;
+        }
+    };
+    AsyncAction.prototype._unsubscribe = function () {
+        var id = this.id;
+        var scheduler = this.scheduler;
+        var actions = scheduler.actions;
+        var index = actions.indexOf(this);
+        this.work = null;
+        this.state = null;
+        this.pending = false;
+        this.scheduler = null;
+        if (index !== -1) {
+            actions.splice(index, 1);
+        }
+        if (id != null) {
+            this.id = this.recycleAsyncId(scheduler, id, null);
+        }
+        this.delay = null;
+    };
+    return AsyncAction;
+}(Action_1.Action));
+exports.AsyncAction = AsyncAction;
+//# sourceMappingURL=AsyncAction.js.map
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Subscription_1 = __webpack_require__(9);
+/**
+ * A unit of work to be executed in a {@link Scheduler}. An action is typically
+ * created from within a Scheduler and an RxJS user does not need to concern
+ * themselves about creating and manipulating an Action.
+ *
+ * ```ts
+ * class Action<T> extends Subscription {
+ *   new (scheduler: Scheduler, work: (state?: T) => void);
+ *   schedule(state?: T, delay: number = 0): Subscription;
+ * }
+ * ```
+ *
+ * @class Action<T>
+ */
+var Action = (function (_super) {
+    __extends(Action, _super);
+    function Action(scheduler, work) {
+        _super.call(this);
+    }
+    /**
+     * Schedules this action on its parent Scheduler for execution. May be passed
+     * some context object, `state`. May happen at some point in the future,
+     * according to the `delay` parameter, if specified.
+     * @param {T} [state] Some contextual data that the `work` function uses when
+     * called by the Scheduler.
+     * @param {number} [delay] Time to wait before executing the work, where the
+     * time unit is implicit and defined by the Scheduler.
+     * @return {void}
+     */
+    Action.prototype.schedule = function (state, delay) {
+        if (delay === void 0) { delay = 0; }
+        return this;
+    };
+    return Action;
+}(Subscription_1.Subscription));
+exports.Action = Action;
+//# sourceMappingURL=Action.js.map
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Scheduler_1 = __webpack_require__(172);
+var AsyncScheduler = (function (_super) {
+    __extends(AsyncScheduler, _super);
+    function AsyncScheduler() {
+        _super.apply(this, arguments);
+        this.actions = [];
+        /**
+         * A flag to indicate whether the Scheduler is currently executing a batch of
+         * queued actions.
+         * @type {boolean}
+         */
+        this.active = false;
+        /**
+         * An internal ID used to track the latest asynchronous task such as those
+         * coming from `setTimeout`, `setInterval`, `requestAnimationFrame`, and
+         * others.
+         * @type {any}
+         */
+        this.scheduled = undefined;
+    }
+    AsyncScheduler.prototype.flush = function (action) {
+        var actions = this.actions;
+        if (this.active) {
+            actions.push(action);
+            return;
+        }
+        var error;
+        this.active = true;
+        do {
+            if (error = action.execute(action.state, action.delay)) {
+                break;
+            }
+        } while (action = actions.shift()); // exhaust the scheduler queue
+        this.active = false;
+        if (error) {
+            while (action = actions.shift()) {
+                action.unsubscribe();
+            }
+            throw error;
+        }
+    };
+    return AsyncScheduler;
+}(Scheduler_1.Scheduler));
+exports.AsyncScheduler = AsyncScheduler;
+//# sourceMappingURL=AsyncScheduler.js.map
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/**
+ * An execution context and a data structure to order tasks and schedule their
+ * execution. Provides a notion of (potentially virtual) time, through the
+ * `now()` getter method.
+ *
+ * Each unit of work in a Scheduler is called an {@link Action}.
+ *
+ * ```ts
+ * class Scheduler {
+ *   now(): number;
+ *   schedule(work, delay?, state?): Subscription;
+ * }
+ * ```
+ *
+ * @class Scheduler
+ */
+var Scheduler = (function () {
+    function Scheduler(SchedulerAction, now) {
+        if (now === void 0) { now = Scheduler.now; }
+        this.SchedulerAction = SchedulerAction;
+        this.now = now;
+    }
+    /**
+     * Schedules a function, `work`, for execution. May happen at some point in
+     * the future, according to the `delay` parameter, if specified. May be passed
+     * some context object, `state`, which will be passed to the `work` function.
+     *
+     * The given arguments will be processed an stored as an Action object in a
+     * queue of actions.
+     *
+     * @param {function(state: ?T): ?Subscription} work A function representing a
+     * task, or some unit of work to be executed by the Scheduler.
+     * @param {number} [delay] Time to wait before executing the work, where the
+     * time unit is implicit and defined by the Scheduler itself.
+     * @param {T} [state] Some contextual data that the `work` function uses when
+     * called by the Scheduler.
+     * @return {Subscription} A subscription in order to be able to unsubscribe
+     * the scheduled work.
+     */
+    Scheduler.prototype.schedule = function (work, delay, state) {
+        if (delay === void 0) { delay = 0; }
+        return new this.SchedulerAction(this, work).schedule(state, delay);
+    };
+    Scheduler.now = Date.now ? Date.now : function () { return +new Date(); };
+    return Scheduler;
+}());
+exports.Scheduler = Scheduler;
+//# sourceMappingURL=Scheduler.js.map
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var async_1 = __webpack_require__(67);
+var map_1 = __webpack_require__(65);
 /**
  * @param scheduler
  * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
@@ -9593,12 +9454,12 @@ exports.Timestamp = Timestamp;
 //# sourceMappingURL=timestamp.js.map
 
 /***/ }),
-/* 176 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var withLatestFrom_1 = __webpack_require__(177);
+var withLatestFrom_1 = __webpack_require__(175);
 /* tslint:enable:max-line-length */
 /**
  * Combines the source Observable with other Observables to create an Observable
@@ -9649,7 +9510,7 @@ exports.withLatestFrom = withLatestFrom;
 //# sourceMappingURL=withLatestFrom.js.map
 
 /***/ }),
-/* 177 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9787,7 +9648,7 @@ var WithLatestFromSubscriber = (function (_super) {
 //# sourceMappingURL=withLatestFrom.js.map
 
 /***/ }),
-/* 178 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "style.css";
