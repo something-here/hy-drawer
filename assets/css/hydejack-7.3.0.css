@@ -9,7 +9,7 @@
  *                 /\___/                \ \____/
  *                 \/__/                  \/___/
  *
- * Powered by Hydejack v7.2.0 <https://qwtel.com/hydejack/>
+ * Powered by Hydejack v7.3.0 <https://qwtel.com/hydejack/>
  */
 *,
 *::before,
@@ -200,14 +200,14 @@ h5 + h6, .h5 + .h6, h5 + .h6, .h5 + h6 {
   margin-top: 0; }
 
 dt {
-  font-weight: 600; }
+  font-weight: 700; }
 
 dd {
   margin-bottom: .5rem; }
 
 abbr {
   font-size: 85%;
-  font-weight: 600;
+  font-weight: 700;
   color: #555;
   text-transform: uppercase; }
   abbr[title] {
@@ -435,7 +435,7 @@ footer {
 a[href^="#fn:"],
 a[href^="#fnref:"] {
   margin-left: .1rem;
-  font-weight: 600; }
+  font-weight: 700; }
   @media screen and (max-width: 73.5em) {
     a[href^="#fn:"],
     a[href^="#fnref:"] {
@@ -726,7 +726,7 @@ hy-push-state a, .a {
 
 a.sidebar-nav-item {
   display: block;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.75;
   padding: .25rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
