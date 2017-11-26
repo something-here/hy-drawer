@@ -4809,7 +4809,7 @@ function setupObservables() {
     // When the `opened` state changes, we "jump" to the new position,
     // which is either 0 (when closed) or the width of the drawer (when open).
     // We also want to jump when `align` chagnes, in this case to the other side of the viewport.
-    (_context13 = (_context13 = _combineLatest.combineLatest.call(_Observable.Observable, _this3[sOpened$], _this3[sAlign$], resize$), _do._do).call(_context13, function (_ref29) {
+    (_context13 = (_context13 = _combineLatest.combineLatest.call(_Observable.Observable, _this3[sOpened$], _this3[sAlign$]), _do._do).call(_context13, function (_ref29) {
       var _ref30 = _slicedToArray(_ref29, 1),
           opened = _ref30[0];
 
