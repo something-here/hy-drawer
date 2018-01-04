@@ -1,5 +1,7 @@
 # hy-drawer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/qwtel/hy-drawer.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/hy-drawer.svg)](https://badge.fury.io/js/hy-drawer)
 
 **hy-drawer** is a touch-enabled drawer component for the modern web.
